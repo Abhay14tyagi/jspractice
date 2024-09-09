@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./../output.css" rel="stylesheet">
+  <title>Button Example</title>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-slate-400">
+ <div class="p-3 flex items-center justify-center bg-black rounded-lg" id="mainDiv">
+    <div class="grid grid-cols-2 gap-1.5 border border-black">
+        <button
+        onclick="colorChange(event)"
+            type="button"
+            class=" p-3  bg-white btn btn-secondary border border-black rounded-lg text-red-400"
+        >
+           red
+        </button>
+        <button
+        onclick="colorChange(event)"
+            type="button"
+            class="p-3  bg-white btn btn-secondary border border-black rounded-lg text-green-400"
+        >
+           green
+        </button>
+        <button
+        onclick="colorChange(event)"
+            type="button"
+            class=" p-3  bg-white btn btn-secondary border border-black rounded-lg text-blue-400"
+        >
+            blue
+        </button>
+        <button
+        onclick="colorChange(event)"
+        type="button"
+        class=" p-3  bg-white btn btn-secondary border border-black rounded-lg text-yellow-400"
+    >
+        yellow
+    </button>
+    </div>
+ </div>
+ <script src="./colorChange.js"></script>
+</body>
+</html>

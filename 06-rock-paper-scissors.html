@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
+    <button onclick="playGame(0)">Rock</button>
+    <button onclick="playGame(1)">Paper</button>
+    <button onclick="playGame(2)">Scissors</button>
+    <div class="result" id="result"></div><br>
+    <div class="score" id="score"></div><br>
+    <button onclick="resetGame()">reset score</button>
+
+    <script>
+        let score=0;
+        function playGame(userChoice) {
+            const choices = ['Rock', 'Paper', 'Scissors'];
+            let randomIndex = Math.floor(Math.random() * choices.length);
+            let computerChoice = randomIndex;
+
+            let result = '';
+            if (userChoice === computerChoice) {
+                result = 'It\'s a tie!';
+            } else if (
+                (userChoice === 0 && computerChoice === 2) || 
+                (userChoice === 1 && computerChoice === 0) || 
+                (userChoice === 2 && computerChoice === 1)
+            ) {
+                score+=1;
+                result = 'You win! ' + choices[userChoice] + ' beats ' + choices[computerChoice];
+            } else {
+                score=0;
+                result = 'You lose! ' + choices[computerChoice] + ' beats ' + choices[userChoice];
+            }
+
+            document.getElementById('result').innerText = result;
+            document.getElementById('score').innerText='score ='+score;
+        }
+        function resetGame(){
+            score=0;
+            document.getElementById('score').innerText='score ='+score;
+        }
+    </script>
+</body>
+</html>
